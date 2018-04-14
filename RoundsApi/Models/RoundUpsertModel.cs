@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace RoundsApi.Models
 {
-    public class Round
+    public class RoundUpsertModel
     {
-        public Guid partyId { get; set; }
+        [Required]
         public List<User> users { get; set; }
+        [Required]
         public Guid currentUser { get; set; }
-        public string partyName { get; set; }
     }
 }

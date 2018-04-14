@@ -4,13 +4,13 @@ using System.Collections.Generic;
 
 namespace RoundsApi.Store
 {
-    public class InMemoryStore
+    public class InMemoryUserStore
     {
         User user1;
         User user2;
         public Dictionary<Guid, User> users { get; set; }
 
-        public InMemoryStore()
+        public InMemoryUserStore()
         {
             user1 = new User() { name = "Adam", drink = "Beer", id = Guid.NewGuid() };
             user2 = new User() { name = "Louise", drink = "Wine", id = Guid.NewGuid() };

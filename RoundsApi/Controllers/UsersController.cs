@@ -9,7 +9,7 @@ namespace RoundsApi.Controllers
     public class UsersController : Controller
     {
         Dictionary<Guid, User> users;
-        public UsersController(Store.InMemoryStore userStore)
+        public UsersController(Store.InMemoryUserStore userStore)
         {
             users = userStore.users;
         }
