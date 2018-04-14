@@ -18,7 +18,8 @@ namespace RoundsApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddSingleton(new Store.InMemoryStore());
+            services.AddSingleton(new Store.InMemoryUserStore());
+            services.AddSingleton(new Store.InMemoryRoundStore());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
