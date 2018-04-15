@@ -10,16 +10,16 @@
   "profiles": {
     "IIS Express": {
       "commandName": "IISExpress",
-      "launchBrowser": true,
-      "launchUrl": "api/users",
+      "launchBrowser": false,
+      "launchUrl": "swagger",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
     "RoundsApi": {
       "commandName": "Project",
-      "launchBrowser": true,
-      "launchUrl": "api/users",
+      "launchBrowser": false,
+      "launchUrl": "swagger",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

@@ -20,6 +20,13 @@ namespace RoundsApi
             services.AddMvc();
             services.AddSingleton(new Store.InMemoryUserStore());
             services.AddSingleton(new Store.InMemoryRoundStore());
+            services.AddSwaggerGen(swagger =>
+            {
+                swagger.SwaggerDoc("v1", new Swashbuckle.AspNetCore.Swagger.Info
+                {
+                    Title = "Rounds API"
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -29,6 +36,11 @@ namespace RoundsApi
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Rounds API");
+            });
             app.UseMvc();
         }
     }
