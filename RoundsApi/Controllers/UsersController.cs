@@ -39,12 +39,18 @@ namespace RoundsApi.Controllers
 
         // POST api/users
         [HttpPost]
-        public IActionResult Post([FromBody]User newUser)
+        public IActionResult Post([FromBody]UserUpsertModel newUser)
         {
-            newUser.id = Guid.NewGuid();
-            users.Add(newUser.id, newUser);
+            User userToSave = new User()
+            {
+                userId = Guid.NewGuid(),
+                name = newUser.name,
+                drink = newUser.drink
+            };
 
-            return CreatedAtAction("Get", new { newUser.id }, newUser);
+            users.Add(userToSave.userId, userToSave);
+
+            return CreatedAtAction("Get", new { userToSave.userId }, userToSave);
         }
 
         // PUT api/users/{id}

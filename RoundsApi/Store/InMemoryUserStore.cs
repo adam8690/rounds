@@ -12,9 +12,9 @@ namespace RoundsApi.Store
 
         public InMemoryUserStore()
         {
-            user1 = new User() { name = "Adam", drink = "Beer", id = Guid.NewGuid() };
-            user2 = new User() { name = "Louise", drink = "Wine", id = Guid.NewGuid() };
-            users = new Dictionary<Guid, User> { { user1.id, user1 }, { user2.id, user2 } };
+            user1 = new User() { name = "Adam", drink = "Beer", userId = Guid.NewGuid() };
+            user2 = new User() { name = "Louise", drink = "Wine", userId = Guid.NewGuid() };
+            users = new Dictionary<Guid, User> { { user1.userId, user1 }, { user2.userId, user2 } };
         }
     }
 }

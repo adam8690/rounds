@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace RoundsApi.Models
 {
@@ -6,6 +7,7 @@ namespace RoundsApi.Models
     {
         [Required]
         public string name { get; set; }
+
         [Required]
         public string drink { get; set; }
     }

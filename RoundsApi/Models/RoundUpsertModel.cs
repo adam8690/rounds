@@ -7,8 +7,11 @@ namespace RoundsApi.Models
     public class RoundUpsertModel
     {
         [Required]
-        public List<User> users { get; set; }
+        public string partyName { get; set; }
+
+        public List<Guid> users { get; set; }
+
         [Required]
-        public Guid currentUser { get; set; }
+        public Guid? currentUser { get; set; }
     }
 }

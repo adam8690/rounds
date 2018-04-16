@@ -37,12 +37,18 @@ namespace RoundsApi.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody]Round newRound)
+        public IActionResult Post([FromBody]RoundUpsertModel newRound)
         {
-            newRound.partyId = Guid.NewGuid();
-            rounds.Add(newRound.partyId, newRound);
+            Round roundToSave = new Round()
+            {
+                roundId = Guid.NewGuid(),
+                currentUser = newRound.currentUser,
+                partyName = newRound.partyName,
+                users = newRound.users ?? new List<Guid>()
+            };
+            rounds.Add(roundToSave.roundId, roundToSave);
 
-            return CreatedAtAction("Get", new { newRound.partyId }, newRound);
+            return CreatedAtAction("Get", new { roundToSave.roundId }, roundToSave);
         }
 
         [HttpPut("{id}")]
